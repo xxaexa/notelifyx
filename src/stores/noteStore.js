@@ -10,7 +10,6 @@ export const useNoteStore = defineStore('note', () => {
     description: null,
   })
 
-  // actions
   const setNotes = (data) => {
     notes.value = data
   }

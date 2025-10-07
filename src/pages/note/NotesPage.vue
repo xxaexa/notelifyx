@@ -18,20 +18,17 @@ onMounted(async () => {
   noteStore.setNotes(res.data)
 })
 
-// reset form
 const resetForm = () => {
   Object.assign(form, { title: '', description: '' })
   editingId.value = null
 }
 
-// buka modal update
 const openUpdate = (note) => {
   editingId.value = note._id
   Object.assign(form, note)
   showUpdate.value = true
 }
 
-// update note
 const handleUpdate = async () => {
   try {
     await updateNoteApi({ ...form })

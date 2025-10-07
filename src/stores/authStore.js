@@ -12,7 +12,6 @@ export const useAuthStore = defineStore('auth', () => {
   })
   const token = ref(null)
 
-  // actions
   const setAuth = (data) => {
     token.value = data.token
 
@@ -25,7 +24,6 @@ export const useAuthStore = defineStore('auth', () => {
       updatedAt: data.user.updatedAt,
     })
 
-    // save to local storage
     localStorage.setItem(
       'auth',
       JSON.stringify({
