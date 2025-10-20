@@ -19,7 +19,6 @@ const handleCreate = async () => {
     await createNoteApi({ ...form })
     const res = await getNotesApi()
     noteStore.setNotes(res.data)
-
     $q.notify({
       type: 'positive',
       message: 'Note created successfully!',
@@ -48,7 +47,7 @@ const handleCreate = async () => {
         <p class="text-h4 text-primary text-center q-ml-md q-mb-none">Create New Note</p>
       </div>
 
-      <q-btn color="primary" icon="save" label="Save" type="submit" />
+      <q-btn color="primary" icon="save" label="Save" type="submit" @click="handleCreate" />
     </div>
 
     <q-form @submit="handleCreate" class="q-gutter-md">
